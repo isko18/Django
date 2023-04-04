@@ -7,19 +7,19 @@ class HelloViewTestCase(TestCase):
         self.client = Client()
 
     def test_hello(self):
-        response = self.client.get(reverse("hello-view"))
+        response = self.client.get(reverse("Hello-view"))
         expected_data = "Hello"
         self.assertEqual(expected_data, response.content.decode())
         self.assertEqual(500, response.status_code)
-        self.assertEqual(response['name'], 'alex')        
+        self.assertEqual(response['Name'], 'Alex')        
    
     def test_contacts(self):
-        response = self.client.get(reverse("contacts-view"))
-        expected_data = "number"
+        response = self.client.get(reverse("Contacts-view"))
+        expected_data = "Number"
         self.assertEqual(expected_data, response.content.decode())
 
     def test_about(self):
-        response = self.client.get(reverse("about-view"))
-        expected_data = "about"
+        response = self.client.get(reverse("About-view"))
+        expected_data = "About"
         self.assertEqual(expected_data, response.content.decode())
 
