@@ -10,18 +10,16 @@ class HelloViewTestCase(TestCase):
         response = self.client.get(reverse("hello-view"))
         expected_data = "Hello"
         self.assertEqual(expected_data, response.content.decode())
-        self.assertEqual(500, response.status.code)
+        self.assertEqual(500, response.status_code)
+        self.assertEqual(response['name'], 'alex')        
+   
+    def test_contacts(self):
+        response = self.client.get(reverse("contacts-view"))
+        expected_data = "number"
+        self.assertEqual(expected_data, response.content.decode())
 
     def test_about(self):
         response = self.client.get(reverse("about-view"))
-        expected_data = "Adbot"
+        expected_data = "about"
         self.assertEqual(expected_data, response.content.decode())
-        self.assertEqual(500, response.status.code)
-
-    def test_contacts(self):
-        response = self.client.get(reverse("contacts-view"))
-        expected_data = "contacts"
-        self.assertEqual(expected_data, response.content.decode())
-        self.assertEqual(500, response.status.code)
-
 
