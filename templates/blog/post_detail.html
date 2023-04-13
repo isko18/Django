@@ -10,6 +10,17 @@
 </div>
     <br>
 
+    <a href="{% url 'post-delete' post.id %}"><button>Удалить пост</button></a>
+    </form>
+    <br>
+
+  </div>
+</div>
+    <br>
+
+    <a href="{% url 'post-update' post.id %}"><button>Обновить запись</button></a>
+    <br>
+
     <a href="{% url 'index-page' %}">На главную</a>
     <a href="{% url 'about-view' %}">О нас</a>
     <a href="{% url 'contacts-view' %}">Контакты</a>
