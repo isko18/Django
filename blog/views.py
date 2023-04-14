@@ -52,17 +52,17 @@ class PostUpdateView(generic.UpdateView):
 #     }
 #     return render(request, "blog/index.html", context=context)
 
-class AboutView(generic.ListView):
+class AboutView(generic.TemplateView):
     model = Post 
     template_name = "blog/about.html"
     success_url = reverse_lazy("index-page")
-    fields = ["title"]
+    
 
-class ContactsView(generic.ListView):
+class ContactsView(generic.TemplateView):
     model = Post
     template_name = "blog/contacts.html" 
     success_url = reverse_lazy("index-page")
-    fields = ["title",]
+    
 
 # def get_about(request):
 #     # context = {
