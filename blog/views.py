@@ -28,10 +28,15 @@ class PostCreateView(generic.CreateView):
     fields = ["title", "content"]
 
 
-# DELETE
+# # DELETE
 class PostDeleteView(generic.DeleteView):
     model = Post
     template_name = "blog/post_delete.html"
+    success_url = reverse_lazy("index-page")
+    fields = ["title", "content"]
+class PostDeleteConfirimView(generic.DeleteView):
+    model = Post
+    template_name = "blog/post_delete_confirm.html"
     success_url = reverse_lazy("index-page")
     fields = ["title", "content"]
 
@@ -55,13 +60,13 @@ class PostUpdateView(generic.UpdateView):
 class AboutView(generic.TemplateView):
     model = Post 
     template_name = "blog/about.html"
-    success_url = reverse_lazy("index-page")
+    
     
 
 class ContactsView(generic.TemplateView):
     model = Post
     template_name = "blog/contacts.html" 
-    success_url = reverse_lazy("index-page")
+    
     
 
 # def get_about(request):

@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Удалить пост</h1>
   <p>Вы действительно хотите удалить этот пост?</p>
   <form action="{% url 'post-delete' post.pk %}" method="post">
     {% csrf_token %}

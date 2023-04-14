@@ -9,8 +9,10 @@
   </div>
 </div>
     <br>
-
-    <a href="{% url 'post-delete' post.id %}"><button>Удалить пост</button></a>
+    <form action="{% url 'post-delete' post.pk%}" method="get">
+      
+    {% csrf_token %}
+    <a href="{% url 'post-delete-confirm' post.id %}"><button>Удалить пост</button></a>
     </form>
     <br>
 
