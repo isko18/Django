@@ -29,14 +29,9 @@ class PostCreateView(generic.CreateView):
 
 
 # # DELETE
-class PostDeleteView(generic.DeleteView):
-    model = Post
-    template_name = "blog/post_delete.html"
-    success_url = reverse_lazy("index-page")
-    fields = ["title", "content"]
 class PostDeleteConfirimView(generic.DeleteView):
     model = Post
-    template_name = "blog/post_delete_confirm.html"
+    template_name = "blog/post_confirm_delete.html"
     success_url = reverse_lazy("index-page")
     fields = ["title", "content"]
 

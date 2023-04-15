@@ -12,10 +12,10 @@
   </div>
 </div>
     <br>
-    <form action="{% url 'post-delete' post.pk%}" method="get">
+    <form action="{% url 'post-confirm-delete' post.pk%}" method="get">
       
     {% csrf_token %}
-    <a href="{% url 'post-delete-confirm' post.id %}"><button>Удалить пост</button></a>
+    <a href="{% url 'post-confirm-delete' post.id %}"><button>Удалить пост</button></a>
     </form>
     <br>
 
